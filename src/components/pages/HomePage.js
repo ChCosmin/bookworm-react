@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import * as actions from '../../actions/auth'; 
 
 
@@ -9,7 +10,11 @@ const HomePage = ({ isAuthenticated, logout }) => (
   <div>
     <h1>Home page</h1>
     { isAuthenticated ? 
-      (<button type="button" onClick={logout}>Logout</button>) 
+      (<div>
+        <button type="button" onClick={logout}>Logout</button>
+        <button><Link to="/dashboard">To Dashboard</Link></button>  
+      </div>
+      ) 
       : 
       (<div><Link to="/login">Login</Link> or <Link to="/signup">Sign up</Link></div>) 
     }

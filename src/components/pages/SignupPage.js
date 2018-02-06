@@ -10,6 +10,8 @@ class SignupPage extends React.Component {
 
   render() {
     return <div>
+      <h1>Sign up page</h1>
+
       <SignupForm submit={this.submit} />
     </div>
   }
