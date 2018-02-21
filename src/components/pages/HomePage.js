@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 import * as actions from '../../actions/auth'; 
@@ -8,11 +9,10 @@ import * as actions from '../../actions/auth';
 
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
-    <h1>Home page</h1>
+    <Header size="huge" textAlign="center">Welcome to Homepage</Header>
     { isAuthenticated ? 
       (<div>
         <button type="button" onClick={logout}>Logout</button>
-        <button><Link to="/dashboard">To Dashboard</Link></button>  
       </div>
       ) 
       : 
